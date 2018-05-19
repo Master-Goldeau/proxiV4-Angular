@@ -1,0 +1,22 @@
+<form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient()" >
+
+    <app-field label="Prenom*" [control]="clientForm.get('prenom')">
+        <input formControlName="prenom" type="text" class="form-control" placeholder="Prenom">
+    </app-field>
+
+    <app-field label="Nom*" [control]="clientForm.get('nom')">
+        <input formControlName="nom" type="text" class="form-control" placeholder="Nom" >
+    </app-field>
+
+    <app-field label="Login*" [control]="clientForm.get('login')">
+        <input formControlName="login" type="text" class="form-control" placeholder="Login" >
+    </app-field>
+  
+    <app-field label="Password*" [control]="clientForm.get('password')">
+        <input formControlName="password" type="text" class="form-control" placeholder="Password" >
+    </app-field>
+
+    <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid">Enregistrer</button>
+  <a routerLink="..">Annuler</a>
+
+</form>
