@@ -21,6 +21,7 @@ export class ClientListComponent implements OnInit {
   deleteClient(clientId: number) {
     this.clientService.deleteClient(clientId).subscribe();
     this.ngOnInit();
+    alert('Client n°'+clientId+'effacé');
   }
 
   //   loadClients(){

@@ -18,53 +18,58 @@
      
     </tr> -->
 
+<h1>Liste des clients ({{listeClients.length}})</h1>
 
+<ng-template #noClientFound>
+  <h2>Aucun client trouvé</h2>
+</ng-template>
 
-<h3>{{listeClient}}</h3>
+<div class="row" *ngIf="listeClients.length !== 0; else noClientFound">
 
-<!-- new client -->
-<p>
-  <a routerLink="new" class="btn btn-default" (click)="saveClient(Client)">
-    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau client
-  </a>
-</p>
+  <!-- new client -->
+  <p>
+    <a routerLink="new" class="btn btn-default" (click)="saveClient(Client)">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau client
+    </a>
+  </p>
 
-<!-- client list -->
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Prenom</th>
-      <th>Nom</th>
-      <th>Id du Client</th>
-      <th>Conseiller</th>
-      <th>Actions sur client</th>
-      <th>Gestion compte</th>
-    </tr>
-  </thead>
+  <!-- client list -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Id du Client</th>
+        <th>Conseiller</th>
+        <th>Actions sur client</th>
+        <th>Gestion compte</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <tr *ngFor="let client of listeClients">
-      <td>{{client.prenom}}</td>
-      <td>{{client.nom}}</td>
-      <td>{{client.id}}</td>
-      <td>{{client.conseiller}}</td>
+    <tbody>
+      <tr *ngFor="let client of listeClients">
+        <td>{{client.prenom}}</td>
+        <td>{{client.nom}}</td>
+        <td>{{client.id}}</td>
+        <td>{{client.conseiller}}</td>
 
-      <td>
-        <a [routerLink]="['/clients', client.id]" class="btn btn-default btn-sm" target="_blank" (click)>
-          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
-        </a>
-        <a [routerLink]="[client.id]" class="btn btn-default btn-sm" (click)="loadClient(client.id)">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
-        </a>
-        <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
-          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
-        </button>
-      </td>
-      <td>
-        <a [routerLink]="[]" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Gérer les comptes
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td>
+          <a [routerLink]="['/clients', client.id]" class="btn btn-default btn-sm" target="_blank" >
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
+          </a>
+          <a [routerLink]="[client.id]" class="btn btn-default btn-sm" (click)="loadClient(client.id)">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
+          </a>
+          <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+          </button>
+        </td>
+        <td>
+          <a [routerLink]="[]" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Gérer les comptes
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

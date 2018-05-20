@@ -28,6 +28,7 @@ export class ClientFormComponent implements OnInit {
       login: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]]
     });
+    
    //a t on un id de client ds l'url?(si oui => edition), (si non =>creation)
    this.route.paramMap.subscribe(params => {
     this.clientId = +params.get('clientId');
@@ -41,23 +42,22 @@ export class ClientFormComponent implements OnInit {
   })
 }
 
-// saveClient() {
-//   //recupere les donnees du formulaire
-//   const data = this.clientForm.value; // TOUT LE FORMULAIRE
+saveClient() {
+  //recupere les donnees du formulaire
+  const data = this.clientForm.value; // TOUT LE FORMULAIRE
 
-//   //cree une instance de client a partir des data form
-//   const newClient = new Client(data);
+  //cree une instance de client a partir des data form
+  const newClient = new Client(data);
 
-//   //reprend l'id du Client en cours avant de faire saveClient() =>peut etre undefined ou avec d valeurs
-//   newClient.id = this.clientId;
+  //reprend l'id du Client en cours avant de faire saveClient() =>peut etre undefined ou avec d valeurs
+  newClient.id = this.clientId;
 
-//   //enregistre client ds la bdd
-//   this.clientService.saveClient(newClient).subscribe(() => {
-//     //confirmation
-//     alert('Client enregistré avec succes!');
-//     //redirection sur la liste des clients
-//     this.router.navigate(['admin/client']);
-//   })
-//  }
-// }
+  //enregistre client ds la bdd
+  this.clientService.saveClient(newClient).subscribe(() => {
+    //confirmation
+    alert('Client enregistré avec succes!');
+    //redirection sur la liste des clients
+    this.router.navigate(['admin/client']);
+  })
+ }
 }

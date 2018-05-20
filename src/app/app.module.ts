@@ -1,28 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { ClientFormComponent } from './client/client-form/client-form.component';
-import { ClientListComponent } from './client/client-list/client-list.component';
 import { ClientModule } from './client/client.module';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
-
+    AppComponent,
   ],
 
   imports: [
     BrowserModule,
     ClientModule,
     RouterModule.forRoot([]),
-    HttpClientModule
+    HttpClientModule,
+    
   ],
 
-  providers: [],
+  providers: [
+    { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' }
+  ],
 
   bootstrap: [AppComponent]
 })
