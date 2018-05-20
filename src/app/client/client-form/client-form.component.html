@@ -1,4 +1,6 @@
-<form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient()" >
+<form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient(t)" >
+
+
 
     <app-field label="Prenom*" [control]="clientForm.get('prenom')">
         <input formControlName="prenom" type="text" class="form-control" placeholder="Prenom">

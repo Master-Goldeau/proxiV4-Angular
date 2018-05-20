@@ -23,10 +23,11 @@ export class ClientFormComponent implements OnInit {
   ngOnInit() {
     //construit le formulaire tjs a vide
     this.clientForm = this.fb.group({
-      prenom: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
-      nom: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]],
+      prenom: ['', [Validators.required, Validators.minLength(2)]],
+      nom: ['', [Validators.required, Validators.minLength(2)]],
       login: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
-      password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]]
+      password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
+      
     });
     
    //a t on un id de client ds l'url?(si oui => edition), (si non =>creation)

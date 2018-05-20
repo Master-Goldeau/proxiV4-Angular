@@ -21,22 +21,23 @@ export class ClientListComponent implements OnInit {
   deleteClient(clientId: number) {
     this.clientService.deleteClient(clientId).subscribe();
     this.ngOnInit();
-    alert('Client n°'+clientId+'effacé');
+    alert('Client n°' + clientId + 'effacé');
   }
 
-  //   loadClients(){
-  //     this.clientService.loadClients().subscribe(clients=>this.listeClients=clients);
-  //     this.ngOnInit();
-  //   }
+  loadClients() {
+    this.clientService.loadClients().subscribe(clients => this.listeClients = clients);
+    this.ngOnInit();
+  }
 
-  //   loadClient(clientId: number){
-  // this.clientService.loadClient(clientId).subscribe();
-  // this.ngOnInit();
-  //   }
+  loadClient(clientId: number) {
+    this.clientService.loadClient(clientId).subscribe();
+    this.ngOnInit();
+  }
 
-  //   saveClient(client: Client){
-  // this.clientService.saveClient(client).subscribe();
-  // this.ngOnInit();
-  //   }
+  newClient(client: Client) {
+    this.clientService.saveClient(client).subscribe();
+    this.ngOnInit();
+    alert('Client' + client + 'enregistré');
+  }
 
 }

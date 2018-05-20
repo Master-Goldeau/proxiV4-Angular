@@ -19,7 +19,8 @@ const routes: Routes = [
   declarations: [
     ClientFormComponent,
     ClientListComponent,
-    FieldComponent
+    FieldComponent, 
+    ClientFormComponent
   ],
 
   imports: [
