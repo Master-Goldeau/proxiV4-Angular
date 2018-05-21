@@ -4,8 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientFormComponent } from './client-form/client-form.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientService } from './client.service';
-import { FieldComponent } from '../field/field.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
+import { FieldComponent } from './field/field.component';
+// import { ConseillerModule } from '../conseiller/conseiller.module';
 
 
 const routes: Routes = [
@@ -20,13 +22,13 @@ const routes: Routes = [
     ClientFormComponent,
     ClientListComponent,
     FieldComponent, 
-    ClientFormComponent
-  ],
+   ],
 
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // ConseillerModule
   ],
 
   providers: [

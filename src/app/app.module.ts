@@ -5,7 +5,11 @@ import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
+import { ConseillerModule } from './conseiller/conseiller.module';
+import { GerantModule } from './gerant/gerant.module';
+
+// import { FieldComponent } from './field/field.component';
 
 
 
@@ -13,14 +17,18 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ],
+//  FieldComponent, 
+   ],
 
   imports: [
     BrowserModule,
     ClientModule,
+    ConseillerModule,
+    GerantModule,
     RouterModule.forRoot([]),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    
   ],
 
   providers: [

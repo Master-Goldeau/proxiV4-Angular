@@ -4,8 +4,8 @@ interface ClientOptions {
     id?: number,
     prenom?: string,
     nom?: string,
-    login?: string,
-    password?: string,
+    adresse?: string,
+    telephone?: string,
     conseiller?: Conseiller
 }
 
@@ -13,8 +13,8 @@ export class Client {
     id: number;
     prenom: string;
     nom: string;
-    login: string;
-    password: string;
+    adresse: string;
+    telephone: string;
     conseiller: Conseiller
 
 
@@ -22,7 +22,8 @@ export class Client {
         this.id = client.id;
         this.prenom = client.prenom;
         this.nom = client.nom;
-        this.login = client.login;
+        this.adresse = client.adresse;
+        this.telephone=client.telephone
     }
 
 }

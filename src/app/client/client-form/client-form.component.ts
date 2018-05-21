@@ -7,7 +7,7 @@ import { Client } from '../client';
 @Component({
   selector: 'app-client-form',
   templateUrl: './client-form.component.html',
-  styleUrls: ['./client-form.component.css']
+ 
 })
 export class ClientFormComponent implements OnInit {
 
@@ -25,8 +25,8 @@ export class ClientFormComponent implements OnInit {
     this.clientForm = this.fb.group({
       prenom: ['', [Validators.required, Validators.minLength(2)]],
       nom: ['', [Validators.required, Validators.minLength(2)]],
-      login: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
-      password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
+      adresse: ['', [Validators.required, Validators.minLength(1)]],
+      telephone: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
       
     });
     
@@ -58,7 +58,7 @@ saveClient() {
     //confirmation
     alert('Client enregistré avec succes!');
     //redirection sur la liste des clients
-    this.router.navigate(['admin/client']);
+    this.router.navigate(['listeClients']);
   })
  }
 }

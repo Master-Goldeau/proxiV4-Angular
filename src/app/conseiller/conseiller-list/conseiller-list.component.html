@@ -1,0 +1,47 @@
+<h1>Liste des conseillers ({{listeConseillers.length}})</h1>
+
+<ng-template #noConseillerFound>
+  <h2>Aucun conseiller trouvé</h2>
+</ng-template>
+
+<div class="row" *ngIf="listeConseillers.length !== 0; else noConseillerFound">
+
+  <!-- new conseiller -->
+  <!-- <p>
+    <a routerLink="/newConseiller" class="btn btn-default" >
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau Conseiller
+    </a>
+  </p> -->
+
+  <!-- conseiller list -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Id du Conseiller</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let conseiller of listeConseillers">
+        <td>{{conseiller.prenom}}</td>
+        <td>{{conseiller.nom}}</td>
+        <td>{{conseiller.id}}</td>
+        
+        <!-- <td>
+          <a [routerLink]="['/editConseiller', conseiller.id]" class="btn btn-default btn-sm" (click)="loadConseiller(conseiller.id)" >
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
+          </a>
+          <a [routerLink]="['/editConseiller', conseiller.id]" class="btn btn-default btn-sm" (click)="loadConseiller(conseiller.id)">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
+          </a>
+          <button class="btn btn-danger btn-sm" (click)="deleteConseiller(conseiller.id)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Supprimer
+          </button>
+        </td> -->
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

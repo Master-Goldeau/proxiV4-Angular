@@ -5,7 +5,7 @@ import { Client } from '../client';
 @Component({
   selector: 'app-client-list',
   templateUrl: './client-list.component.html',
-  styleUrls: ['./client-list.component.css']
+
 })
 
 export class ClientListComponent implements OnInit {
@@ -21,7 +21,7 @@ export class ClientListComponent implements OnInit {
   deleteClient(clientId: number) {
     this.clientService.deleteClient(clientId).subscribe();
     this.ngOnInit();
-    alert('Client n°' + clientId + 'effacé');
+    alert('Client n°' + clientId + ' effacé');
   }
 
   loadClients() {
