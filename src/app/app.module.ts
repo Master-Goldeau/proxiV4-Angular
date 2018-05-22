@@ -1,33 +1,44 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
-import { ConseillerModule } from './conseiller/conseiller.module';
-import { GerantModule } from './gerant/gerant.module';
-
-// import { FieldComponent } from './field/field.component';
+import { HomeComponent } from './common/home/home.component';
+import { CommonModule } from '@angular/common';
+import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
+import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
 
 
+
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path:'conseiller-login', component: ConseillerLoginComponent},
+  { path:'gerant-login', component: GerantLoginComponent}
+  
+]
 
 
 @NgModule({
   declarations: [
     AppComponent,
-//  FieldComponent, 
-   ],
+    HomeComponent,
+    ConseillerLoginComponent,
+    GerantLoginComponent,
+
+    ],
 
   imports: [
     BrowserModule,
     ClientModule,
-    ConseillerModule,
-    GerantModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot(routes),      
     HttpClientModule,
     FormsModule,
+  
     
   ],
 
