@@ -11,7 +11,7 @@ import { Client } from '../client';
 export class ClientListComponent implements OnInit {
 
   listeClients: Client[];
-  option: boolean;
+  option: any;
 
   constructor(private clientService: ClientService) { }
 
@@ -30,7 +30,7 @@ export class ClientListComponent implements OnInit {
     this.ngOnInit();
   }
 
-  loadClient(clientId: number, options: boolean) {
+  loadClient(clientId: number, options: any) {
     this.option = options; //Récupération du choix (editer ou voir)
     this.clientService.loadClient(clientId).subscribe();
     this.ngOnInit();
