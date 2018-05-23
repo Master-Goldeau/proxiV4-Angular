@@ -52,10 +52,12 @@
         <td>{{client.id}}</td>
         
         <td>
-          <a [routerLink]="['/editClient', client.id, option]" class="btn btn-default btn-sm" (click)="loadClient(client.id,'voir')" >
+          <!-- <a [routerLink]="['/editClient', client.id, option]" class="btn btn-default btn-sm" (click)="loadClient(client.id,'voir')"  > -->
+          <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadClient(client.id)"  >
             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
           </a>
-          <a [routerLink]="['/editClient', client.id, option]" class="btn btn-default btn-sm" (click)="loadClient(client.id,'editer')">
+          <!-- <a [routerLink]="['/editClient', client.id, option]" class="btn btn-default btn-sm" (click)="loadClient(client.id, 'editer')"></a> -->
+          <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadClient(client.id)">
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
           </a>
           <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
