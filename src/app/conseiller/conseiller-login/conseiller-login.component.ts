@@ -8,15 +8,24 @@ import { Conseiller } from '../conseiller';
 
 @Component({
   selector: 'app-conseiller-login',
-  templateUrl: './conseiller-login.component.html'
+  templateUrl: './conseiller-login.component.html',
+  styles: []
 })
+
 export class ConseillerLoginComponent implements OnInit {
   // Component state
   isLoading = true;
   currentUser: Conseiller;
 
+  userLogin = '/assets/Userlogin.jpg';
+
   constructor(private router: Router,
-              private authService: AuthService) {
+    private authService: AuthService) { }
+
+  // Redirect the user to the Home page clicking on cancel.
+  gotoHome(event?: Event) {
+    if (event) { event.preventDefault(); }
+    this.router.navigate(['']);
   }
 
   ngOnInit() {

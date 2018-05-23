@@ -11,10 +11,8 @@ export class HomeComponent implements OnInit {
 
   Proxibanque = '/assets/Proxibanque.jpg';
 
-  appName = 'ProxibanqueV4';
 
   constructor(private router: Router) { }
-
 
   ngOnInit() {
   }

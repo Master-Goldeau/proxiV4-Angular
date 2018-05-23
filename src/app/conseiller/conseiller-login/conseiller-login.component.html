@@ -1,21 +1,38 @@
-<div class="container">
-  <div class="jumbotron text-center">
+<div class="tete">
+  <div class="element">
+    <div class="container">
+      <div class="col-md-6 col-md-offset-3" style="border: solid;">
 
-    <p *ngIf="isLoading; else showUI">Chargement en cours...</p>
-
-    <ng-template #showUI>
-      <div *ngIf="currentUser">
-        <p>Vous êtes identifié en tant que {{ currentUser.name }} ({{ currentUser.email }}).</p>
         <p>
-          <button class="btn btn-primary" (click)="gotoAdmin($event)">Accéder à l'admin</button>
-          <button class="btn btn-default" (click)="doLogout()">Se déconnecter</button>
-        </p>
-      </div>
-      <div *ngIf="!currentUser">
-        <p>Vous n'êtes pas identifié.</p>
-        <p><button class="btn btn-danger" (click)="doLogin()">S'authentifier</button></p>
-      </div>
-    </ng-template>
+        <img [src]="userLogin" class="logo" alt="LogoUserLogin" width="50%" height="50%">
+      </p>
+        <a>
+          <label for="uname">
+            <b>Login conseiller</b>
+          </label>
 
+          <input type="text" placeholder="Entrez votre nom" name="uname" required>
+
+        </a>
+      
+        <a>
+          <label for="psw">
+            <b>Password</b>
+          </label>
+
+          <input type="password" placeholder="Mot de passe" name="psw" required>
+        </a>
+
+        <p>
+          <a>
+            <button type="submit">Login</button>
+
+            <button type="button" (click)="gotoHome($event)" class="cancelbtn">cancel</button>
+
+          </a>
+        </p>
+
+      </div>
+    </div>
   </div>
 </div>
