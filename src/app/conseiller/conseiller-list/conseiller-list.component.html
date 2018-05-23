@@ -19,7 +19,7 @@
       <tr>
         <th>Prenom</th>
         <th>Nom</th>
-        <th>Id du Conseiller</th>
+        <th>Login</th>
       </tr>
     </thead>
 
@@ -27,7 +27,7 @@
       <tr *ngFor="let conseiller of listeConseillers">
         <td>{{conseiller.prenom}}</td>
         <td>{{conseiller.nom}}</td>
-        <td>{{conseiller.id}}</td>
+        <td>{{conseiller.login}}</td>
         
         <!-- <td>
           <a [routerLink]="['/editConseiller', conseiller.id]" class="btn btn-default btn-sm" (click)="loadConseiller(conseiller.id)" >

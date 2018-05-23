@@ -5,9 +5,14 @@ import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { GerantModule } from './gerant/gerant.module';
+
+import { CompteModule } from './compte/compte.module';
+import { CompteListComponent } from './compte/compte-list/compte-list.component';
+// import { AuthGuard } from './conseiller/services/auth.guard';
+// import { AuthService } from './conseiller/services/auth.service';
 
 // import { FieldComponent } from './field/field.component';
 
@@ -17,8 +22,10 @@ import { GerantModule } from './gerant/gerant.module';
 @NgModule({
   declarations: [
     AppComponent,
-//  FieldComponent, 
-   ],
+    // CompteComponent,
+    // CompteListComponent,
+    // FieldComponent, 
+  ],
 
   imports: [
     BrowserModule,
@@ -28,11 +35,13 @@ import { GerantModule } from './gerant/gerant.module';
     RouterModule.forRoot([]),
     HttpClientModule,
     FormsModule,
-    
+    CompteModule
   ],
 
   providers: [
-    { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' }
+    { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' },
+    // AuthGuard,
+    // AuthService
   ],
 
   bootstrap: [AppComponent]

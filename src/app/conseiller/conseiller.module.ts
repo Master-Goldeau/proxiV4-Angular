@@ -9,12 +9,15 @@ import { ConseillerListComponent } from './conseiller-list/conseiller-list.compo
 import { ConseillerService } from './conseiller.service';
 import { GerantModule } from '../gerant/gerant.module';
 import { FieldComponent } from './field/field.component';
+// import { AuthGuard } from './services/auth.guard';
+// import { AuthService } from './services/auth.service';
 
 
 const routes: Routes = [
   { path: 'listeConseillers', component: ConseillerListComponent },
 //   // { path: 'editConseiller/:conseillerId', component: ConseillerFormComponent },
 //   // { path: 'newConseiller', component: ConseillerFormComponent },
+// { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canActivate: [AuthGuard] },
   { path: '', redirectTo: 'listeConseillers', pathMatch: 'full' }
 ]
 
@@ -33,7 +36,9 @@ const routes: Routes = [
   ],
 
   providers: [
-    ConseillerService
+    ConseillerService,
+    // AuthGuard,
+    // AuthService
   ]
 })
 export class ConseillerModule { }
