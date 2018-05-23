@@ -7,21 +7,27 @@ import { ClientService } from './client.service';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FieldComponent } from './field/field.component';
+import { ClientVoirComponent } from './client-voir/client-voir.component';
 // import { ConseillerModule } from '../conseiller/conseiller.module';
 
 
+
 const routes: Routes = [
-  { path: 'listeClients', component: ClientListComponent },
+  { path: 'clients', component: ClientListComponent },
   { path: 'editClient/:clientId', component: ClientFormComponent },
   { path: 'newClient', component: ClientFormComponent },
- ]
+  { path: 'voirClient/:clientId', component: ClientVoirComponent }
+
+]
 
 @NgModule({
   declarations: [
     ClientFormComponent,
     ClientListComponent,
-    FieldComponent, 
-   ],
+    FieldComponent,
+    ClientVoirComponent,
+    
+  ],
 
   imports: [
     CommonModule,

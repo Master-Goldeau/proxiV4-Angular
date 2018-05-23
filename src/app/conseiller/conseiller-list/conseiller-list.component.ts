@@ -10,12 +10,12 @@ import { ConseillerService } from '../conseiller.service';
 
 export class ConseillerListComponent implements OnInit {
 
-  listeConseillers: Conseiller[];
+  conseillers: Conseiller[];
 
   constructor(private conseillerService: ConseillerService) { }
 
   ngOnInit() {
-    this.conseillerService.loadConseillers().subscribe(conseillers => this.listeConseillers = conseillers);
+    this.conseillerService.loadConseillers().subscribe(conseillers => this.conseillers = conseillers);
   }
 
   // deleteConseiller(conseillerId: number) {
@@ -25,7 +25,7 @@ export class ConseillerListComponent implements OnInit {
   // }
 
   loadConseillers() {
-    this.conseillerService.loadConseillers().subscribe(conseillers => this.listeConseillers = conseillers);
+    this.conseillerService.loadConseillers().subscribe(conseillers => this.conseillers = conseillers);
     this.ngOnInit();
   }
 

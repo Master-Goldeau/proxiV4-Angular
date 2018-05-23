@@ -1,8 +1,4 @@
-// /**
-//  * @file
-//  * Dummy cookie-based auth.
-//  * Authenticating just means setting a 'conseiller' cookie. No password required.
-//  */
+
 // import { Injectable, Inject } from '@angular/core';
 // import { DOCUMENT } from '@angular/common';
 

@@ -1,0 +1,30 @@
+<form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient()" >
+
+
+
+  <app-field label="Prenom*" [control]="clientForm.get('prenom')">
+      <input formControlName="prenom" type="text" class="form-control" placeholder="Prenom">
+      <!-- Ici test désactivation -->
+      <!-- <input [attr.disabled]="option=='voir' ? '' : null" formControlName="prenom" type="text" class="form-control" placeholder="Prenom"> -->
+  </app-field>
+
+  <app-field label="Nom*" [control]="clientForm.get('nom')">
+      <input formControlName="nom" type="text" class="form-control" placeholder="Nom" >
+  </app-field>
+
+
+
+  <app-field label="Adresse*" [control]="clientForm.get('adresse')">
+      <input formControlName="adresse" type="text" class="form-control" placeholder="Adresse" >
+  </app-field>
+
+  <app-field label="Telephone*" [control]="clientForm.get('telephone')">
+      <input formControlName="telephone" type="text" class="form-control" placeholder="Telephone" >
+  </app-field>
+
+  
+<a routerLink="/clients">Retour</a>
+
+
+
+</form>

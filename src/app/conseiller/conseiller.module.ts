@@ -14,10 +14,9 @@ import { ConseillerLoginComponent } from './conseiller-login/conseiller-login.co
 
 const routes: Routes = [
 
-  { path: 'listeConseillers', component: ConseillerListComponent },
+  { path: 'conseillers', component: ConseillerListComponent },
   { path: 'conseiller-login', component: ConseillerLoginComponent },
-  // { path: 'gerant-login', component: GerantLoginComponent },
-
+  
   //   // { path: 'editConseiller/:conseillerId', component: ConseillerFormComponent },
   //   // { path: 'newConseiller', component: ConseillerFormComponent },
   // { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canActivate: [AuthGuard] },

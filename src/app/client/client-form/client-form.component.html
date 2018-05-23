@@ -22,8 +22,8 @@
         <input formControlName="telephone" type="text" class="form-control" placeholder="Telephone" >
     </app-field>
 
-    <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid">Enregistrer</button>
-  <a routerLink="/listeClients">Annuler</a>
+    <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid && !clientForm.dirty">Enregistrer</button>
+  <a routerLink="/clients">Annuler</a>
   
   
 

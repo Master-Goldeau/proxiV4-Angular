@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
-import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
+// import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { GerantModule } from './gerant/gerant.module';
 
@@ -16,6 +16,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './common/home/home.component';
 import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
+
+
 
 // import { AuthService } from './conseiller/services/auth.service';
 // import { AuthGuard } from './conseiller/services/auth.guard';
@@ -38,6 +40,8 @@ const routes: Routes = [
     // CompteListComponent,
     // FieldComponent, 
     HomeComponent,
+   
+
     
 
     ],
@@ -49,7 +53,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ConseillerModule,
-    // GerantModule,
+    GerantModule,
     CompteModule,
 
   ],

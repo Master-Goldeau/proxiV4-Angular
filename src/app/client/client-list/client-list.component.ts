@@ -10,13 +10,13 @@ import { Client } from '../client';
 
 export class ClientListComponent implements OnInit {
 
-  listeClients: Client[];
+  clients: Client[];
   // option:any;
 
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
-    this.clientService.loadClients().subscribe(clients => this.listeClients = clients);
+    this.clientService.loadClients().subscribe(clients => this.clients = clients);
   }
 
   deleteClient(clientId: number) {
@@ -26,7 +26,7 @@ export class ClientListComponent implements OnInit {
   }
 
   loadClients() {
-    this.clientService.loadClients().subscribe(clients => this.listeClients = clients);
+    this.clientService.loadClients().subscribe(clients => this.clients = clients);
     this.ngOnInit();
   }
 

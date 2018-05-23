@@ -8,25 +8,22 @@
         </p>
         <a>
           <label for="uname">
-            <b>Login Gérant</b>
+            <b>Login conseiller</b>
           </label>
-
-          <input class="form-control ng-pristine ng-invalid ng-touched" formcontrolname="loginGerant" placeholder="Titre" ng-reflect-name="loginGerant"
-            type="text" placeholder="Entrez votre nom" required>
+          
+          <input type="text" placeholder="Entrez votre nom" name="uname" required>
         </a>
 
         <a>
           <label for="psw">
             <b>Password</b>
           </label>
-
           <input type="password" placeholder="Mot de passe" name="psw" required>
         </a>
 
         <p>
           <a>
-            <button type="submit">Login</button>
-
+            <button type="submit" (click)="doLogin()">Login</button>
             <button type="button" (click)="gotoHome($event)" class="cancelbtn">cancel</button>
 
           </a>

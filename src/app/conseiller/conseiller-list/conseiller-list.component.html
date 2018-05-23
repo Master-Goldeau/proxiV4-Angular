@@ -1,10 +1,10 @@
-<h1>Liste des conseillers ({{listeConseillers.length}})</h1>
+<h1>Liste des conseillers ({{conseillers.length}})</h1>
 
 <ng-template #noConseillerFound>
   <h2>Aucun conseiller trouvé</h2>
 </ng-template>
 
-<div class="row" *ngIf="listeConseillers.length !== 0; else noConseillerFound">
+<div class="row" *ngIf="conseillers.length !== 0; else noConseillerFound">
 
   <!-- new conseiller -->
   <!-- <p>
@@ -24,7 +24,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let conseiller of listeConseillers">
+      <tr *ngFor="let conseiller of conseillers">
         <td>{{conseiller.prenom}}</td>
         <td>{{conseiller.nom}}</td>
         <td>{{conseiller.login}}</td>

@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   signIn(): Observable<Conseiller> {
-    const userData = {name: 'Bob', login: 'bob'};
+    const userData = {login: 'bob', password: '1234'};
     this.setCookie('user', JSON.stringify(userData));
     this.checkCurrentUser();
     return Observable.of(new Conseiller(userData));

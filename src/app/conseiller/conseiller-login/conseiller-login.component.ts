@@ -17,7 +17,7 @@ export class ConseillerLoginComponent implements OnInit {
   isLoading = true;
   currentUser: Conseiller;
 
-  userLogin = '/assets/Userlogin.jpg';
+  userLogin = '/assets/UserLogin.jpg';
 
   constructor(private router: Router,
     private authService: AuthService) { }
@@ -39,26 +39,37 @@ export class ConseillerLoginComponent implements OnInit {
         });
   }
 
-  doLogin() {
-    this.authService.signIn()
-      .subscribe(user => {
-        if (user) {
-          this.gotoAdmin();
-        }
-      });
-  }
+  // doLogin() {
+  //   this.authService.signIn().
+  //   subscribe(user => {
+      // if (user) {
+  //       this.gotoAdmin();
+  //     }
+  //   });
+  // }
 
-  doLogout() {
-    this.authService.signOut()
-      .subscribe(() => {
-        alert('Vous êtes déconnecté(e).');
-      });
-  }
+  doLogin() {
+    this.authService.signIn().subscribe(user => {
+        if (user.login=='bob' && user.password=='1234') {
+          // if (user) {
+          this.gotoAdmin();
+        } else {
+          this.gotoHome();
+        }
+  })}
+
+
+  // doLogout() {
+  //   this.authService.signOut()
+  //     .subscribe(() => {
+  //       alert('Vous êtes déconnecté(e).');
+  //     });
+  // }
 
   // Redirect the user to the admin homepage.
   gotoAdmin(event?: Event) {
     if (event) { event.preventDefault(); }
-    this.router.navigate(['conseiller-login']);
+    this.router.navigate(['clients']);
   }
 }
 

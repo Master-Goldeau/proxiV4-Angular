@@ -59,9 +59,9 @@ saveClient() {
   //enregistre client ds la bdd
   this.clientService.saveClient(newClient).subscribe(() => {
     //confirmation
-    alert('Client enregistré avec succes!');
+   alert('Client enregistré avec succes!');
     //redirection sur la liste des clients
-    this.router.navigate(['listeClients']);
+   this.router.navigate(['clients']);
   })
  }
 }
