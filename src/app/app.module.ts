@@ -2,11 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes } from '@angular/router';
+
 import { FormsModule} from '@angular/forms';
-import { AppComponent } from './app.component';
-import { ClientModule } from './client/client.module';
-import { HomeComponent } from './common/home/home.component';
 import { CommonModule } from '@angular/common';
 import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
 import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
@@ -15,7 +12,16 @@ import { GerantModule } from './gerant/gerant.module';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FooterComponent } from './common/footer/footer.component';
 
+import { CompteModule } from './compte/compte.module';
+import { CompteListComponent } from './compte/compte-list/compte-list.component';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './common/home/home.component';
+import { AppComponent } from './app.component';
+import { ClientModule } from './client/client.module';
 
+// import { AuthService } from './conseiller/services/auth.service';
+// import { AuthGuard } from './conseiller/services/auth.guard';
+// import { FieldComponent } from './field/field.component';
 
 
 const routes: Routes = [
@@ -30,6 +36,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    // CompteComponent,
+    // CompteListComponent,
+    // FieldComponent, 
     HomeComponent,
     NavbarComponent,
     FooterComponent,
@@ -40,17 +49,19 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     ClientModule,
-    RouterModule.forRoot(routes),      
+    RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
     ConseillerModule,
-    GerantModule,
-  
-    
+    // GerantModule,
+    CompteModule,
+
   ],
 
   providers: [
-    { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' }
+    { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' },
+    // AuthGuard,
+    // AuthService
   ],
 
   bootstrap: [AppComponent]

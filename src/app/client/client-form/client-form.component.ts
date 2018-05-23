@@ -13,8 +13,7 @@ export class ClientFormComponent implements OnInit {
 
   clientForm: FormGroup;
   clientId: number;
-  //Ici
-  //option: any;
+  // option:any;
 
   constructor(private fb: FormBuilder,
     private clientService: ClientService,
@@ -35,7 +34,7 @@ export class ClientFormComponent implements OnInit {
    //a t on un id de client ds l'url?(si oui => edition), (si non =>creation)
    this.route.paramMap.subscribe(params => {
     this.clientId = +params.get('clientId');
-   //récupération du choix
+    //récupération du choix
     // this.option=params.get('option');
     if (this.clientId) { //edition
       //charge le client depuis le backend

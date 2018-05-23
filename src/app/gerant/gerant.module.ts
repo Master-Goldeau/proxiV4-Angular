@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GerantLoginComponent } from './gerant-login/gerant-login.component';
+// import { AuthGuard } from './services/auth.guard';
+// import { AuthService } from './services/auth.service';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [GerantLoginComponent]
+  declarations: [],
+
+  providers:[
+    // AuthGuard,
+    // AuthService
+  ]
 })
 export class GerantModule { }

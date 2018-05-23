@@ -29,8 +29,7 @@
       "prenom": "Jean-Michel",
       "nom": "Hiltbrunner",
       "adresse": "5 rue four",
-      "telephone": "1234567890",
-      "conseiller": "bob"
+      "telephone": "1234567890"
     },
     {
       "id": 2,
@@ -55,6 +54,16 @@
       "adresse": "8 avenue foch",
       "telephone": "1234567890",
       "conseiller": "laura"
+    }
+  ],
+  "comptes": [
+    {
+      "id": 10,
+      "solde": 1000
+    },
+    {
+      "id": 11,
+      "solde": 100
     }
   ]
 }

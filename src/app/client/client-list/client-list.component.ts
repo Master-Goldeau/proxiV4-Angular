@@ -11,7 +11,7 @@ import { Client } from '../client';
 export class ClientListComponent implements OnInit {
 
   listeClients: Client[];
-  //option: any;
+  // option:any;
 
   constructor(private clientService: ClientService) { }
 
