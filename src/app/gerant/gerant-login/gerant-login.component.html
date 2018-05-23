@@ -3,10 +3,12 @@
     <div class="container">
       <div class="col-md-6 col-md-offset-3" style="border: solid;">
 
-        <p>
-          <img [src]="userLogin" class="logo" alt="LogoUserLogin" width="50%" height="50%">
-        </p>
-        <a>
+
+        <img [src]="userLogin" class="logo" alt="LogoUserLogin" width="50%" height="50%">
+
+        <form class="form-group mb-2 mx-sm-3 form-inline">
+
+
           <label for="uname">
             <b>Login conseiller</b>
           </label>
@@ -14,7 +16,11 @@
           <input type="text" placeholder="Entrez votre nom" name="uname" required>
         </a>
 
-        <a>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="uname" class="sr-only">Uname</label>
+            <input type="password" class="form-control" id="psw" placeholder="Entrez votre nom">
+          </div>
+
           <label for="psw">
             <b>Password</b>
           </label>
@@ -26,8 +32,7 @@
             <button type="submit" (click)="doLogin()">Login</button>
             <button type="button" (click)="gotoHome($event)" class="cancelbtn">cancel</button>
 
-          </a>
-        </p>
+        <button type="button" (click)="gotoHome($event)" class="cancelbtn">cancel</button>
 
       </div>
     </div>

@@ -9,6 +9,8 @@ import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseill
 // import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { GerantModule } from './gerant/gerant.module';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 import { CompteModule } from './compte/compte.module';
 import { CompteListComponent } from './compte/compte-list/compte-list.component';
@@ -40,8 +42,8 @@ const routes: Routes = [
     // CompteListComponent,
     // FieldComponent, 
     HomeComponent,
-   
-
+    NavbarComponent,
+    FooterComponent,
     
 
     ],
