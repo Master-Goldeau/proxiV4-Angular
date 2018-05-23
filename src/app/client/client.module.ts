@@ -14,8 +14,7 @@ const routes: Routes = [
   { path: 'listeClients', component: ClientListComponent },
   { path: 'editClient/:clientId', component: ClientFormComponent },
   { path: 'newClient', component: ClientFormComponent },
-  { path: '', redirectTo: 'listeClients', pathMatch: 'full' }
-]
+ ]
 
 @NgModule({
   declarations: [

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-
-
 import { ReactiveFormsModule } from '@angular/forms';
-// // import { ConseillerFormComponent } from './conseiller-form/conseiller-form.component';
+
+
+
 import { ConseillerListComponent } from './conseiller-list/conseiller-list.component';
 import { ConseillerService } from './conseiller.service';
 import { GerantModule } from '../gerant/gerant.module';
@@ -23,16 +23,15 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-//     // ConseillerFormComponent,
     ConseillerListComponent,
-    FieldComponent, 
+    FieldComponent,
+    // ConseillerLoginComponent, 
   ],
 
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    GerantModule
   ],
 
   providers: [
