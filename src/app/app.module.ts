@@ -10,22 +10,22 @@ import { CompteModule } from './compte/compte.module';
 import { CompteListComponent } from './compte/compte-list/compte-list.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './common/home/home.component';
-import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
-import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
+
+// import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
 import { AppComponent } from './app.component';
 import { ClientModule } from './client/client.module';
+// import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
+import { AuthService } from './conseiller/services/auth.service';
 // import { AuthGuard } from './conseiller/services/auth.guard';
-// import { AuthService } from './conseiller/services/auth.service';
-
 // import { FieldComponent } from './field/field.component';
 
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path:'conseiller-login', component: ConseillerLoginComponent},
-  { path:'gerant-login', component: GerantLoginComponent}
-  
+  // { path: 'conseiller-login', component: ConseillerLoginComponent },
+  // { path: 'gerant-login', component: GerantLoginComponent }
+
 ]
 
 
@@ -35,15 +35,20 @@ const routes: Routes = [
     // CompteComponent,
     // CompteListComponent,
     // FieldComponent, 
+    HomeComponent,
+  
   ],
 
   imports: [
     BrowserModule,
     ClientModule,
-    RouterModule.forRoot(routes),      
+    RouterModule.forRoot(routes),
     HttpClientModule,
     FormsModule,
-    CompteModule
+    ConseillerModule,
+    // GerantModule,
+    CompteModule,
+
   ],
 
   providers: [
