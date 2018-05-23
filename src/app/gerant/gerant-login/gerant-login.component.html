@@ -3,34 +3,42 @@
     <div class="container">
       <div class="col-md-6 col-md-offset-3" style="border: solid;">
 
-        <p>
-          <img [src]="userLogin" class="logo" alt="LogoUserLogin" width="50%" height="50%">
-        </p>
-        <a>
+
+        <img [src]="userLogin" class="logo" alt="LogoUserLogin" width="50%" height="50%">
+
+        <form class="form-group mb-2 mx-sm-3 form-inline">
+
+
           <label for="uname">
             <b>Login Gérant</b>
           </label>
 
-          <input class="form-control ng-pristine ng-invalid ng-touched" formcontrolname="loginGerant" placeholder="Titre" ng-reflect-name="loginGerant"
+          <input class="form-inline ng-pristine ng-invalid ng-touched sr-only" formcontrolname="loginGerant" ng-reflect-name="loginGerant"
             type="text" placeholder="Entrez votre nom" required>
-        </a>
 
-        <a>
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="uname" class="sr-only">Uname</label>
+            <input type="password" class="form-control" id="psw" placeholder="Entrez votre nom">
+          </div>
+
           <label for="psw">
             <b>Password</b>
           </label>
 
-          <input type="password" placeholder="Mot de passe" name="psw" required>
-        </a>
+          <input class="form-inline ng-pristine ng-invalid ng-touched sr-only" formcontrolname="PasswordGerant" ng-reflect-name="PasswordGerant"
+            type="password" placeholder="Mot de passe" name="psw" required>
 
-        <p>
-          <a>
-            <button type="submit">Login</button>
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="psw" class="sr-only">Password</label>
+                <input type="password" class="form-control" id="psw" placeholder="Mot de passe">
+              </div>
 
-            <button type="button" (click)="gotoHome($event)" class="cancelbtn">cancel</button>
 
-          </a>
-        </p>
+        </form>
+
+        <button type="submit">Login</button>
+
+        <button type="button" (click)="gotoHome($event)" class="cancelbtn">cancel</button>
 
       </div>
     </div>

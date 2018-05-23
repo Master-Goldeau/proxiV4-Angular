@@ -12,6 +12,8 @@ import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseill
 import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { GerantModule } from './gerant/gerant.module';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 
 
@@ -29,6 +31,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
+    NavbarComponent,
+    FooterComponent,
     
 
     ],
