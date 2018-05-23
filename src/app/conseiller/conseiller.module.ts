@@ -13,9 +13,11 @@ import { GerantLoginComponent } from '../gerant/gerant-login/gerant-login.compon
 
 
 const routes: Routes = [
+
   { path: 'listeConseillers', component: ConseillerListComponent },
   { path: 'conseiller-login', component: ConseillerLoginComponent },
   { path: 'gerant-login', component: GerantLoginComponent },
+
 ]
 
 @NgModule({
@@ -23,7 +25,7 @@ const routes: Routes = [
     ConseillerListComponent,
     FieldComponent,
     ConseillerLoginComponent, 
-  ],
+   ],
 
   imports: [
     CommonModule,

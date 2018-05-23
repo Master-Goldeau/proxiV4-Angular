@@ -10,6 +10,8 @@ import { HomeComponent } from './common/home/home.component';
 import { CommonModule } from '@angular/common';
 import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
 import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
+import { ConseillerModule } from './conseiller/conseiller.module';
+import { GerantModule } from './gerant/gerant.module';
 
 
 
@@ -17,8 +19,8 @@ import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.compone
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path:'conseiller-login', component: ConseillerLoginComponent},
-  { path:'gerant-login', component: GerantLoginComponent}
+  // { path:'conseiller-login', component: ConseillerLoginComponent},
+  // { path:'gerant-login', component: GerantLoginComponent}
   
 ]
 
@@ -27,8 +29,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    ConseillerLoginComponent,
-    GerantLoginComponent,
+    
 
     ],
 
@@ -38,6 +39,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),      
     HttpClientModule,
     FormsModule,
+    ConseillerModule,
+    GerantModule,
   
     
   ],
