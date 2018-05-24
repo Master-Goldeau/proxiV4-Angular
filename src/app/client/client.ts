@@ -38,6 +38,7 @@ export class Client { //implements Person
         this.telephone = client.telephone || '';
         this.compteCourant = client.CompteCourant; 
         this.compteEpargne = client.CompteEpargne;
+        this.conseiller = client.conseiller;
     }
 
 }

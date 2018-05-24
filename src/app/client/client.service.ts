@@ -31,4 +31,8 @@ export class ClientService {
   deleteClient(clientId: number): Observable<any> {
     return this.http.delete('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId);
   }
+
+  // virement(numCompteDebiteur : number, numCompteCrediteur : number, montant : number){
+  //   return this.http.put('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/virement/' , numCompteDebiteur + '/' +numCompteCrediteur +'/'+montant);
+  // }
 }

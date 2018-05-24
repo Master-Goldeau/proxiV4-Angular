@@ -1,4 +1,5 @@
 import { Gerant } from "../gerant/gerant";
+import { Client } from "../client/client";
 // import { Person } from "../person";
 
 
@@ -13,7 +14,8 @@ interface ConseillerOptions {
   nom?: string,
   login?: string,
   password?: string,
-  gerant?: Gerant
+  gerant?: Gerant,
+  clients?: Client[];
 }
 
 export class Conseiller { //implements Person
@@ -23,6 +25,7 @@ export class Conseiller { //implements Person
   login: string;
   password: string;
   gerant: Gerant;
+  clients: Client[];
 
 
   constructor(conseiller: ConseillerOptions={}) {
@@ -30,7 +33,9 @@ export class Conseiller { //implements Person
       this.prenom = conseiller.prenom;
       this.nom = conseiller.nom;
       this.login = conseiller.login;
-      this.password=conseiller.password
+      this.password=conseiller.password;
+      this.gerant=conseiller.gerant;
+      this.clients=conseiller.clients;
   }
 
 }

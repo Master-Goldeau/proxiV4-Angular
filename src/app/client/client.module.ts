@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FieldComponent } from './field/field.component';
 import { ClientVoirComponent } from './client-voir/client-voir.component';
 // import { ConseillerModule } from '../conseiller/conseiller.module';
-
+// import { VirementComponent } from './virement/virement.component';
 
 
 const routes: Routes = [
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'editClient/:clientId', component: ClientFormComponent },
   { path: 'newClient', component: ClientFormComponent },
   { path: 'voirClient/:clientId', component: ClientVoirComponent }
+  
 
 ]
 
@@ -26,6 +27,7 @@ const routes: Routes = [
     ClientListComponent,
     FieldComponent,
     ClientVoirComponent,
+    // VirementComponent
     
   ],
 

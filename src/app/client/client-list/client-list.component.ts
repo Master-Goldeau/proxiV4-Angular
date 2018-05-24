@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../client.service';
 import { Client } from '../client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-client-list',
@@ -13,7 +14,7 @@ export class ClientListComponent implements OnInit {
   clients: Client[];
   // option:any;
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService, private router : Router) { }
 
   ngOnInit() {
     this.clientService.loadClients().subscribe(clients => this.clients = clients);
@@ -42,5 +43,7 @@ export class ClientListComponent implements OnInit {
     this.ngOnInit();
     alert('Client' + client + 'enregistré');
   }
-
+  // virement() {
+  //   this.router.navigate(['virement']);
+  // }
 }

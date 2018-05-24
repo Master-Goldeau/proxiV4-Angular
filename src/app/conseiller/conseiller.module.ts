@@ -9,6 +9,8 @@ import { ConseillerService } from './conseiller.service';
 import { FieldComponent } from './field/field.component';
 import { AuthService } from './services/auth.service';
 import { ConseillerLoginComponent } from './conseiller-login/conseiller-login.component';
+import { AuditComponent } from './audit/audit.component';
+
 // import { AuthGuard } from './services/auth.guard';
 
 
@@ -16,6 +18,7 @@ const routes: Routes = [
 
   { path: 'conseillers', component: ConseillerListComponent },
   { path: 'conseiller-login', component: ConseillerLoginComponent },
+  { path: 'audit', component: AuditComponent},
   
   //   // { path: 'editConseiller/:conseillerId', component: ConseillerFormComponent },
   //   // { path: 'newConseiller', component: ConseillerFormComponent },
@@ -27,7 +30,8 @@ const routes: Routes = [
   declarations: [
     ConseillerListComponent,
     FieldComponent,
-    ConseillerLoginComponent, 
+    ConseillerLoginComponent,
+    AuditComponent
    ],
 
   imports: [
