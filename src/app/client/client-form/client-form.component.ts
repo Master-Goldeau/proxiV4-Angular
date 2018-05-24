@@ -74,7 +74,7 @@ export class ClientFormComponent implements OnInit {
   this.clientForm.get('telephone').setValue(client.telephone);
 
   // Champs compte courant client
-  this.comptecourantForm.get('numCompte').setValue(client.compteCourant.numCompte);
+  //this.comptecourantForm.get('numCompte').setValue(client.compteCourant.numCompte);
   this.comptecourantForm.get('solde').setValue(client.compteCourant.solde);
   this.comptecourantForm.get('dateOuverture').setValue(client.compteCourant.dateOuverture);
   this.comptecourantForm.get('typeCompte').setValue(client.compteCourant.typeCompte);
@@ -82,7 +82,7 @@ export class ClientFormComponent implements OnInit {
 
   //Champs compte Epargne client
   if (client.compteEpargne) {
-    this.compteepargneForm.get('numCompte').setValue(client.compteEpargne.numCompte);
+   // this.compteepargneForm.get('numCompte').setValue(client.compteEpargne.numCompte);
     this.compteepargneForm.get('solde').setValue(client.compteEpargne.solde);
     this.compteepargneForm.get('dateOuverture').setValue(client.compteEpargne.dateOuverture);
     this.compteepargneForm.get('typeCompte').setValue(client.compteEpargne.typeCompte);
@@ -95,7 +95,7 @@ export class ClientFormComponent implements OnInit {
 
 saveClient() {
   const compteCourantEdit: CompteCourant = new CompteCourant({
-    numCompte: this.comptecourantForm.get('numCompte').value,
+    //numCompte: this.comptecourantForm.get('numCompte').value,
     solde:this.comptecourantForm.get('solde').value,
     dateOuverture:this.comptecourantForm.get('dateOuverture').value,
     typeCompte: this.comptecourantForm.get('typeCompte').value,
@@ -103,7 +103,7 @@ saveClient() {
   });
 
   const compteEpargneEdit: CompteEpargne = new CompteEpargne({
-    numCompte: this.compteepargneForm.get('numCompte').value,
+    //numCompte: this.compteepargneForm.get('numCompte').value,
     solde: this.compteepargneForm.get('solde').value,
     dateOuverture: this.compteepargneForm.get('dateOuverture').value,
     typeCompte: this.compteepargneForm.get('typeCompte').value,
@@ -139,7 +139,7 @@ saveClient() {
   }
   editClient() {
     const compteCourantEdit: CompteCourant = new CompteCourant({
-      numCompte: this.comptecourantForm.get('numCompte').value,
+      //numCompte: this.comptecourantForm.get('numCompte').value,
       solde:this.comptecourantForm.get('solde').value,
       dateOuverture:this.comptecourantForm.get('dateOuverture').value,
       typeCompte: this.comptecourantForm.get('typeCompte').value,
@@ -147,7 +147,7 @@ saveClient() {
     });
   
     const compteEpargneEdit: CompteEpargne = new CompteEpargne({
-      numCompte: this.compteepargneForm.get('numCompte').value,
+      //numCompte: this.compteepargneForm.get('numCompte').value,
       solde: this.compteepargneForm.get('solde').value,
       dateOuverture: this.compteepargneForm.get('dateOuverture').value,
       typeCompte: this.compteepargneForm.get('typeCompte').value,

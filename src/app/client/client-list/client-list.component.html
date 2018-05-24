@@ -1,25 +1,5 @@
-<!-- <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Prenom</th>
-      <th>Nom</th>
-      <th>Id du Client</th>
-      <th>Conseiller</th>
-    </tr>
-  </thead>
-  <tbody>
 
-    <tr *ngFor="let client of listeClients">
-      <td>{{client.prenom}}</td>
-      <td>{{client.nom}}</td>
-      <td>{{client.id}}</td>
-      <td>{{client.conseiller}}</td>
-      <button (click)="deleteClient(client.id)">Supprimer</button>
-     
-    </tr> -->
-
-
-
+  <h3>Vous êtes en charge de {{clients.length}} client(s)</h3>
 <ng-template #noClientFound>
   <h2>Aucun client trouvé</h2>
 </ng-template>
@@ -41,18 +21,21 @@
       <span class="glyphicon glyphicon-euro" aria-hidden="true"></span> Gérer tous les comptes
     </a>
   </td>
-<h3>Bienvenue sur votre LISTE DE CLIENTS.<br/>
-  Vous êtes en charge de {{clients.length}} client(s)</h3>
+
+  <p></p>
+  
 
   <!-- client list -->
   <table class="table table-striped">
+    <caption>LISTE DES CLIENTS</caption>
     <thead>
       <tr>
         <th>Prenom</th>
         <th>Nom</th>
         <th>Telephone</th>
-        <th>Actions sur client</th>
-        
+        <th>Afficher un client et ses Comptes</th> 
+        <th>Modifier un client et ses Comptes</th>
+        <th>Supprimer un client et ses Comptes</th> 
       </tr>
     </thead>
 
@@ -63,22 +46,21 @@
         <td>{{client.telephone}}</td>
         
         <td>
-          <!-- <a [routerLink]="['/editClient', client.id, option]" class="btn btn-default btn-sm" (click)="loadClient(client.id,'voir')"  > -->
           <a [routerLink]="['/voirClient', client.id]" class="btn btn-default btn-sm" (click)="loadClient(client.id)"  >
             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
           </a>
-          <!-- <a [routerLink]="['/editClient', client.id, option]" class="btn btn-default btn-sm" (click)="loadClient(client.id, 'editer')"></a> -->
+          </td>
+         <td>
           <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadClient(client.id)">
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
           </a>
+        </td>
+        <td>
           <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Supprimer
           </button>
-        </td>
-        
+        </td> 
       </tr>
-
-    
     </tbody>
   </table>
 </div>

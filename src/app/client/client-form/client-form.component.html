@@ -1,15 +1,13 @@
 <form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient()">
     <form novalidate [formGroup]="clientForm">
         <h4>Informations modifiables du client: </h4>
-        
+
         <app-field label="Nom*" [control]="clientForm.get('nom')">
             <input formControlName="nom" type="text" class="form-control" placeholder="Nom">
         </app-field>
 
         <app-field label="Prenom*" [control]="clientForm.get('prenom')">
             <input formControlName="prenom" type="text" class="form-control" placeholder="Prenom">
-            <!-- Ici test désactivation -->
-            <!-- <input [attr.disabled]="option=='voir' ? '' : null" formControlName="prenom" type="text" class="form-control" placeholder="Prenom"> -->
         </app-field>
 
         <app-field label="Telephone*" [control]="clientForm.get('telephone')">
@@ -38,14 +36,13 @@
         <h4>Informations modifiables du compte courant: </h4>
              <form novalidate [formGroup]="comptecourantForm">
         
-                <app-field label="Numero du Compte*" [control]="comptecourantForm.get('numCompte')" >
+                <!-- <app-field label="Numero du Compte*" [control]="comptecourantForm.get('numCompte')" >
                  <input formControlName="numCompte" type="text" class="form-control" placeholder="Numero du Compte">
-                 </app-field>
+                 </app-field> -->
 
                 <app-field label="Solde*" [control]="comptecourantForm.get('solde')">
                  <input formControlName="solde" type="text" class="form-control" placeholder="Solde">
-                 <!-- Ici test désactivation -->
-                    <!-- <input [attr.disabled]="option=='voir' ? '' : null" formControlName="prenom" type="text" class="form-control" placeholder="Prenom"> -->
+        
                 </app-field>
 
                  <app-field label="Type de compte*" [control]="comptecourantForm.get('typeCompte')">
@@ -67,9 +64,9 @@
         <h4>Informations modifiables du compte épargne: </h4>
         <form novalidate [formGroup]="compteepargneForm">
         
-            <app-field label="Numero du Compte*" [control]="compteepargneForm.get('numCompte')">
+            <!-- <app-field label="Numero du Compte*" [control]="compteepargneForm.get('numCompte')">
             <input formControlName="numCompte" type="text" class="form-control" placeholder="Numero du Compte">
-             </app-field>
+             </app-field> -->
 
             <app-field label="Solde*" [control]="compteepargneForm.get('solde')">
             <input formControlName="solde" type="text" class="form-control" placeholder="Solde">
