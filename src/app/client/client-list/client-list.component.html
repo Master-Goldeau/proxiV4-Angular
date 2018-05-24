@@ -8,6 +8,10 @@
   <h2>Vous ne pouvez plus ajouter de clients</h2>
 </ng-template>
 
+<!-- <ng-template #Clientriche>
+    <h2 style="background-color:DodgerBlue"></h2>
+  </ng-template> -->
+
 <div class="row" *ngIf="clients.length !== 0; else noClientFound">
 
   <!-- new client -->
@@ -41,6 +45,7 @@
 
     <tbody>
       <tr *ngFor="let client of clients">
+          <!-- <p *ngif="client.compteCourant.solde > 500000; else Clientriche"></p> -->
         <td>{{client.prenom}}</td>
         <td>{{client.nom}}</td>
         <td>{{client.telephone}}</td>
