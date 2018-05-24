@@ -1,4 +1,4 @@
-<h1>Bienvenue sur la LISTE DE COMPTES du client</h1>
+<h1>Bienvenue sur la LISTE DES COMPTES de vos clients</h1>
 
 <!-- <ng-template #noCompteFound>
   <h2>Aucun compte trouvé</h2>
@@ -7,11 +7,11 @@
 <!-- <div class="row" *ngIf="listeComptes.length !== 0; else noCompteFound"> -->
 
 <!-- new compte -->
-<p>
+<!-- <p>
   <a routerLink="/newCompteEpargne" class="btn btn-default">
     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau Compte Epargne
   </a>
-</p>
+</p> -->
 
 <!-- compte list -->
 <table class="table table-striped">
@@ -28,30 +28,27 @@
       <td>{{client.compteCourant.numCompte}}</td>
       <td>{{client.compteCourant.solde}}</td>
 
-
-      <!-- <td>
-          <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)" >
+      <!-- <td> -->
+          <!-- <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)" >
             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
-          </a>
-          <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)">
+          </a> -->
+          <!-- <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)">
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
           </a>
           <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
             <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Supprimer
-          </button>
-        </td> -->
+          </button> -->
+        <!-- </td> -->
 
-      <td>
-        <a [routerLink]="['']" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Simulation de credit
-        </a>
-        <a [routerLink]="['']" class="btn btn-default btn-sm">
+      <!-- <td> -->
+      
+        <!-- <a [routerLink]="['']" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Virement
-        </a>
-        <a [routerLink]="['']" class="btn btn-default btn-sm">
+        </a> -->
+        <!-- <a [routerLink]="['']" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Audit
         </a>
-      </td>
+      </td> -->
     </tr>
   </tbody>
 </table>
@@ -72,31 +69,30 @@
       <td>{{client.compteEpargne.solde}}</td>
 
 
-      <!-- <td>
-            <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)" >
+      <!-- <td> -->
+            <!-- <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)" >
               <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
             </a>
             <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)">
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
-            </a>
-            <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
+            </a> -->
+            <!-- <button class="btn btn-danger btn-sm" (click)="deleteClient(client.id)">
               <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Supprimer
             </button>
           </td> -->
-
-      <td>
-        <a [routerLink]="['']" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Simulation de credit
-        </a>
-        <a [routerLink]="['']" class="btn btn-default btn-sm">
+<!-- 
+      <td> -->
+       
+        <!-- <a [routerLink]="['']" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Virement
-        </a>
-        <a [routerLink]="['']" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Audit
-        </a>
-      </td>
+        </a> -->
+        
+        
+      <!-- </td> -->
     </tr>
   </tbody>
 </table>
 
+<!-- <a [routerLink]="['']" class="btn btn-default btn-sm">
+    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Audit </a> -->
 <!-- </div> -->

@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ClientService } from '../client.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Client } from '../client';
+import { CompteCourant } from '../../compte/compte courant/compte courant';
+import { CompteEpargne } from '../../compte/compte epargne/compte epargne';
 
 @Component({
   selector: 'app-client-form',
@@ -10,7 +12,8 @@ import { Client } from '../client';
 
 })
 export class ClientFormComponent implements OnInit {
-
+  comptecourantForm:FormGroup;
+  compteepargneForm:FormGroup;
   clientForm: FormGroup;
   clientId: number;
   // option:any;
@@ -30,8 +33,28 @@ export class ClientFormComponent implements OnInit {
       adresse: [''],
       ville: [''],
       codePostal: [''],
+      numCompte:[''] ,
+      solde: [''] ,
+      dateOuverture: [''],
+      typeCompte: [''],
+      carteVisa: [''] 
+    });
 
+    this.comptecourantForm = this.fb.group({
+      numCompte:[''] ,
+      solde: [''] ,
+      dateOuverture: [''],
+      typeCompte: [''],
+      carteVisa: [''] 
+    });
 
+    this.compteepargneForm = this.fb.group({  
+      numCompte:[''] ,
+      solde: [''] ,
+      dateOuverture: [''],
+      typeCompte: [''],
+      carteVisa: [''], 
+      tauxRemuneration:['']
     });
 
     //a t on un id de client ds l'url?(si oui => edition), (si non =>creation)
@@ -43,13 +66,67 @@ export class ClientFormComponent implements OnInit {
         //charge le client depuis le backend
         this.clientService.loadClient(this.clientId).subscribe(client => {
           //met a jour le form avec le client qu'on vient de charger
-          this.clientForm.patchValue(client);
-        })
-      }
-    })
-  }
+ 
+//Champs données client
+  this.clientForm.get('nom').setValue(client.nom);
+  this.clientForm.get('prenom').setValue(client.prenom);
+  this.clientForm.get('adresse').setValue(client.adresse);
+  this.clientForm.get('ville').setValue(client.ville);
+  this.clientForm.get('codePostal').setValue(client.codePostal);
+  this.clientForm.get('telephone').setValue(client.telephone);
 
-  saveClient() {
+  // Champs compte courant client
+  this.comptecourantForm.get('numCompte').setValue(client.compteCourant.numCompte);
+  this.comptecourantForm.get('solde').setValue(client.compteCourant.solde);
+  this.comptecourantForm.get('dateOuverture').setValue(client.compteCourant.dateOuverture);
+  this.comptecourantForm.get('typeCompte').setValue(client.compteCourant.typeCompte);
+  this.comptecourantForm.get('carteVisa').setValue(client.compteCourant.carteVisa);
+
+  //Champs compte Epargne client
+  if (client.compteEpargne) {
+    this.compteepargneForm.get('numCompte').setValue(client.compteEpargne.numCompte);
+    this.compteepargneForm.get('solde').setValue(client.compteEpargne.solde);
+    this.compteepargneForm.get('dateOuverture').setValue(client.compteEpargne.dateOuverture);
+    this.compteepargneForm.get('typeCompte').setValue(client.compteEpargne.typeCompte);
+    this.compteepargneForm.get('tauxRemuneration').setValue(client.compteEpargne.tauxRemuneration);
+    }
+  });
+}
+});
+}
+
+saveClient() {
+  const compteCourantEdit: CompteCourant = new CompteCourant({
+    numCompte: this.comptecourantForm.get('numCompte').value,
+    solde:this.comptecourantForm.get('solde').value,
+    dateOuverture:this.comptecourantForm.get('dateOuverture').value,
+    typeCompte: this.comptecourantForm.get('typeCompte').value,
+    carteVisa:  this.comptecourantForm.get('carteVisa').value,
+  });
+
+  const compteEpargneEdit: CompteEpargne = new CompteEpargne({
+    numCompte: this.compteepargneForm.get('numCompte').value,
+    solde: this.compteepargneForm.get('solde').value,
+    dateOuverture: this.compteepargneForm.get('dateOuverture').value,
+    typeCompte: this.compteepargneForm.get('typeCompte').value,
+    tauxRemuneration:this.compteepargneForm.get('tauxRemuneration').value,
+
+  });
+
+  //const client = new Client({
+   // id: this.clientId,
+  //  nom: this.clientForm.get('clientNom').value,
+   // prenom: this.clientForm.get('clientPrenom').value,
+   // adresse: this.clientForm.get('clientAdresse').value,
+  //  ville: this.clientForm.get('clientVille').value,
+   // codePostal: this.clientForm.get('clientCodePostal').value,
+   // telephone: this.clientForm.get('clientTelephone').value,
+   // compteCourantEdit: compteCourant,
+   // compteEpargneEdit: compteEpargne,
+//  });
+
+
+    
     //recupere les donnees du formulaire
     const data = this.clientForm.value; // TOUT LE FORMULAIRE
 
