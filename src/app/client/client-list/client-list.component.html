@@ -36,7 +36,11 @@
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau client
     </a>
   </p>
-
+  <td>
+    <a [routerLink]="['/listeComptes']" class="btn btn-default">
+      <span class="glyphicon glyphicon-euro" aria-hidden="true"></span> Gérer tous les comptes
+    </a>
+  </td>
 <h3>Bienvenue sur votre LISTE DE CLIENTS.<br/>
   Vous êtes en charge de {{clients.length}} client(s)</h3>
 
@@ -74,11 +78,7 @@
         
       </tr>
 
-      <td>
-          <a [routerLink]="['/listeComptes']" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-euro" aria-hidden="true"></span> Gérer tous les comptes
-          </a>
-        </td>
+    
     </tbody>
   </table>
 </div>

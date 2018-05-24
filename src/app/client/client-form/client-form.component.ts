@@ -16,6 +16,8 @@ export class ClientFormComponent implements OnInit {
   compteepargneForm:FormGroup;
   clientForm: FormGroup;
   clientId: number;
+  idCompteC: number;
+  idCompteE: number;
   // option:any;
 
   constructor(private fb: FormBuilder,
@@ -33,11 +35,7 @@ export class ClientFormComponent implements OnInit {
       adresse: [''],
       ville: [''],
       codePostal: [''],
-      numCompte:[''] ,
-      solde: [''] ,
-      dateOuverture: [''],
-      typeCompte: [''],
-      carteVisa: [''] 
+     
     });
 
     this.comptecourantForm = this.fb.group({
@@ -112,26 +110,21 @@ saveClient() {
     tauxRemuneration:this.compteepargneForm.get('tauxRemuneration').value,
 
   });
-
-  //const client = new Client({
-   // id: this.clientId,
-  //  nom: this.clientForm.get('clientNom').value,
-   // prenom: this.clientForm.get('clientPrenom').value,
-   // adresse: this.clientForm.get('clientAdresse').value,
-  //  ville: this.clientForm.get('clientVille').value,
-   // codePostal: this.clientForm.get('clientCodePostal').value,
-   // telephone: this.clientForm.get('clientTelephone').value,
-   // compteCourantEdit: compteCourant,
-   // compteEpargneEdit: compteEpargne,
-//  });
-
-
-    
+  const newClient = new Client({
+  nom:this.clientForm.get('nom').value,
+  prenom:this.clientForm.get('prenom').value,
+  adresse:this.clientForm.get('adresse').value,
+  ville:this.clientForm.get('ville').value,
+  codePostal:this.clientForm.get('codePostal').value,
+  telephone:this.clientForm.get('telephone').value,
+  CompteCourant:compteCourantEdit,
+  CompteEpargne:compteEpargneEdit,
+  });
     //recupere les donnees du formulaire
-    const data = this.clientForm.value; // TOUT LE FORMULAIRE
+    // const data = this.clientForm.value; // TOUT LE FORMULAIRE
 
     //cree une instance de client a partir des data form
-    const newClient = new Client(data);
+    // const newClient = new Client(data);
 
     //reprend l'id du Client en cours avant de faire saveClient() =>peut etre undefined ou avec d valeurs
     newClient.id = this.clientId;
@@ -145,21 +138,51 @@ saveClient() {
     })
   }
   editClient() {
-    //recupere les donnees du formulaire
-    const data = this.clientForm.value; // TOUT LE FORMULAIRE
-
-    //cree une instance de client a partir des data form
-    const newClient = new Client(data);
-
-    //reprend l'id du Client en cours avant de faire saveClient() =>peut etre undefined ou avec d valeurs
-    newClient.id = this.clientId;
-
-    //enregistre client ds la bdd
-    this.clientService.saveClient(newClient).subscribe(() => {
-      //confirmation
-      alert('Client enregistré avec succes!');
-      //redirection sur la liste des clients
-      this.router.navigate(['clients']);
-    })
-  }
+    const compteCourantEdit: CompteCourant = new CompteCourant({
+      numCompte: this.comptecourantForm.get('numCompte').value,
+      solde:this.comptecourantForm.get('solde').value,
+      dateOuverture:this.comptecourantForm.get('dateOuverture').value,
+      typeCompte: this.comptecourantForm.get('typeCompte').value,
+      carteVisa:  this.comptecourantForm.get('carteVisa').value,
+    });
+  
+    const compteEpargneEdit: CompteEpargne = new CompteEpargne({
+      numCompte: this.compteepargneForm.get('numCompte').value,
+      solde: this.compteepargneForm.get('solde').value,
+      dateOuverture: this.compteepargneForm.get('dateOuverture').value,
+      typeCompte: this.compteepargneForm.get('typeCompte').value,
+      tauxRemuneration:this.compteepargneForm.get('tauxRemuneration').value,
+  
+    });
+    const newClient = new Client({
+      nom:this.clientForm.get('nom').value,
+      prenom:this.clientForm.get('prenom').value,
+      adresse:this.clientForm.get('adresse').value,
+      ville:this.clientForm.get('ville').value,
+      codePostal:this.clientForm.get('codePostal').value,
+      telephone:this.clientForm.get('telephone').value,
+      CompteCourant:compteCourantEdit,
+      CompteEpargne:compteEpargneEdit,
+      });
+        //recupere les donnees du formulaire
+        // const data = this.clientForm.value; // TOUT LE FORMULAIRE
+    
+        //cree une instance de client a partir des data form
+        // newClient = new Client(data);
+    
+        //reprend l'id du Client en cours avant de faire saveClient() =>peut etre undefined ou avec d valeurs
+        newClient.id = this.clientId;
+    
+        //enregistre client ds la bdd
+        this.clientService.editClient(newClient).subscribe(() => {
+          //confirmation
+          alert('Client enregistré avec succes!');
+          //redirection sur la liste des clients
+          this.router.navigate(['clients']);
+        })
+     
+      
+    }
+  
+  
 }
