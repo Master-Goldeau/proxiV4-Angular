@@ -14,13 +14,25 @@ export class CompteService {
   ) { }
 
 
-  // loadComptes(): Observable<Client[]> {
-  //   return this.http.get<Client[]>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients');
-  // }
+  loadComptes(): Observable<Client[]> {
+    return this.http.get<Client[]>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients');
+  }
 
   loadCompte(clientId: number): Observable<Client> {
     return this.http.get<Client>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId);
   }
+
+
+  // saveCompte(client: Client): Observable<Client> {
+  //   return this.http.post<Client>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId + compteEpargnes);
+  // }
+
+
+  deleteCompteEpargne(client: Client): Observable<any> {
+    return this.http.delete('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + client);
+  }
+}
+
 
   // loadCompteCourants(client: Client): Observable<CompteCourant[]> {
   //   return this.http.get<Client>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId);
@@ -54,9 +66,3 @@ export class CompteService {
   //     return this.http.post<CompteEpargne>('http://localhost:3004/clients/' +client.id, compteEpargnes);
   //   }
   // }
-
- 
-  deleteCompteEpargne(client: Client): Observable<any> {
-    return this.http.delete('http://localhost:3004/clients/' + client);
-  }
-}

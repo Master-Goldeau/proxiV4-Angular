@@ -5,6 +5,7 @@ import { FieldComponent } from './field/field.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompteService } from './compte.service';
+// import { CompteformComponent } from './compteform/compteform.component';
 
 const routes: Routes = [
   { path: 'listeComptes', component: CompteListComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   declarations: [
     FieldComponent,
     CompteListComponent,
+    // CompteformComponent,
   ],
   providers:[
     CompteService

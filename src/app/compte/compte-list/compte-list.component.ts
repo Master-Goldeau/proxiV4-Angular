@@ -42,6 +42,20 @@ export class CompteListComponent implements OnInit {
     this.ngOnInit();
   }
 
+  // newCompteEpargne(compteEpargne: CompteEpargne) {
+  //   this.compteService.saveCompteEpargne(this.client).subscribe();
+  //   this.ngOnInit();
+  //   alert('Compte Epargne' + compteEpargne + 'enregistré');
+  // }
+
+  //   deleteCompteEpargne(compteEpargne: CompteEpargne) {
+  //     this.compteService.deleteCompteEpargne(this.client).subscribe();
+  //     this.ngOnInit();
+  //     alert('Compte Epargne n°' + compteEpargne + ' effacé');
+  //   }
+
+
+
   // loadCompteCourants() {
   //   this.compteService.loadCompteCourants(this.client).subscribe(compteCourants => this.compteCourants = compteCourants);
   //   this.ngOnInit();
@@ -72,15 +86,5 @@ export class CompteListComponent implements OnInit {
   //   this.ngOnInit();
   // }
 
-  // newCompteEpargne(compteEpargne: CompteEpargne) {
-  //   this.compteService.saveCompteEpargne(this.client).subscribe();
-  //   this.ngOnInit();
-  //   alert('Compte Epargne' + compteEpargne + 'enregistré');
-  // }
 
-//   deleteCompteEpargne(compteEpargne: CompteEpargne) {
-//     this.compteService.deleteCompteEpargne(this.client).subscribe();
-//     this.ngOnInit();
-//     alert('Compte Epargne n°' + compteEpargne + ' effacé');
-//   }
 }

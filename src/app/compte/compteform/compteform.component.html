@@ -1,0 +1,37 @@
+<form novalidate [formGroup]="compteForm" (ngSubmit)="saveCompte()" >
+
+    <app-field label="Nom*" [control]="compteForm.get('nom')">
+            <input formControlName="nom" type="text" class="form-control" placeholder="Nom" >
+        </app-field>
+
+<app-field label="Prenom*" [control]="compteForm.get('prenom')">
+    <input formControlName="prenom" type="text" class="form-control" placeholder="Prenom">
+    <!-- Ici test désactivation -->
+    <!-- <input [attr.disabled]="option=='voir' ? '' : null" formControlName="prenom" type="text" class="form-control" placeholder="Prenom"> -->
+</app-field>
+
+<app-field label="Telephone*" [control]="compteForm.get('telephone')">
+        <input formControlName="telephone" type="text" class="form-control" placeholder="Telephone" >
+    </app-field>
+
+
+<app-field label="Adresse" [control]="compteForm.get('adresse')">
+    <input formControlName="adresse" type="text" class="form-control" placeholder="Adresse" >
+</app-field>
+
+<app-field label="Ville" [control]="compteForm.get('ville')">
+        <input formControlName="ville" type="text" class="form-control" placeholder="Ville" >
+    </app-field>
+
+<app-field label="CodePostal" [control]="compteForm.get('codePostal')">
+    <input formControlName="codePostal" type="text" class="form-control" placeholder="CodePostal" >
+</app-field>
+
+
+<button type="submit" class="btn btn-primary" [disabled]="compteForm.invalid && !compteForm.dirty">Enregistrer</button>
+<a routerLink="/clients">Annuler</a>
+
+
+
+</form>
+
