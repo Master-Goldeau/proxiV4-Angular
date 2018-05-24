@@ -18,21 +18,27 @@
      
     </tr> -->
 
-<h1>Bienvenue sur votre LISTE DE CLIENTS.<br/>
-  Vous êtes en charge de {{clients.length}} client(s)</h1>
+
 
 <ng-template #noClientFound>
   <h2>Aucun client trouvé</h2>
 </ng-template>
 
+<ng-template #noClient>
+  <h2>Vous ne pouvez plus ajouter de clients</h2>
+</ng-template>
+
 <div class="row" *ngIf="clients.length !== 0; else noClientFound">
 
   <!-- new client -->
-  <p>
+  <p *ngIf="clients.length < 10; else noClient">
     <a routerLink="/newClient" class="btn btn-default" >
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau client
     </a>
   </p>
+
+<h3>Bienvenue sur votre LISTE DE CLIENTS.<br/>
+  Vous êtes en charge de {{clients.length}} client(s)</h3>
 
   <!-- client list -->
   <table class="table table-striped">

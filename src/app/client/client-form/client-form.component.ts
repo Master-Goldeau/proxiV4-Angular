@@ -67,4 +67,22 @@ export class ClientFormComponent implements OnInit {
       this.router.navigate(['clients']);
     })
   }
+  editClient() {
+    //recupere les donnees du formulaire
+    const data = this.clientForm.value; // TOUT LE FORMULAIRE
+
+    //cree une instance de client a partir des data form
+    const newClient = new Client(data);
+
+    //reprend l'id du Client en cours avant de faire saveClient() =>peut etre undefined ou avec d valeurs
+    newClient.id = this.clientId;
+
+    //enregistre client ds la bdd
+    this.clientService.saveClient(newClient).subscribe(() => {
+      //confirmation
+      alert('Client enregistré avec succes!');
+      //redirection sur la liste des clients
+      this.router.navigate(['clients']);
+    })
+  }
 }

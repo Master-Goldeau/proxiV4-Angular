@@ -13,11 +13,11 @@ export class ConseillerService {
 
 
   loadConseillers(): Observable<Conseiller[]> {
-    return this.http.get<Conseiller[]>('http://localhost:3004/conseillers');
+    return this.http.get<Conseiller[]>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/conseillers/');
   }
 
   loadConseiller(conseillerId: number): Observable<Conseiller> {
-    return this.http.get<Conseiller>('http://localhost:3004/conseillers/' + conseillerId);
+    return this.http.get<Conseiller>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/conseillers/' + conseillerId);
   }
   
 }

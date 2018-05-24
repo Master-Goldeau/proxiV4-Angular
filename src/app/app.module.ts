@@ -61,7 +61,7 @@ const routes: Routes = [
   ],
 
   providers: [
-    { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' },
+    // { provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004' },
     // AuthGuard,
     // AuthService
   ],

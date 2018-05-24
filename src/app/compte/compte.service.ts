@@ -13,13 +13,22 @@ export class CompteService {
     private http: HttpClient
   ) { }
 
-  loadCompteCourants(client: Client): Observable<CompteCourant[]> {
-    return this.http.get<CompteCourant[]>('http://localhost:3004/clients' + client.id);
+
+  loadComptes(): Observable<Client[]> {
+    return this.http.get<Client[]>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients');
   }
 
-  loadCompteEpargnes(client: Client): Observable<CompteEpargne[]> {
-    return this.http.get<CompteEpargne[]>('http://localhost:3004/clients' + client.id);
+  loadCompte(clientId: number): Observable<Client> {
+    return this.http.get<Client>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId);
   }
+
+  // loadCompteCourants(client: Client): Observable<CompteCourant[]> {
+  //   return this.http.get<Client>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId);
+  // }
+
+  // loadCompteEpargnes(client: Client): Observable<CompteEpargne[]> {
+  //   return this.http.get<CompteEpargne[]>('http://localhost:3004/clients' + client.id);
+  // }
 
 
   // loadCompteCourant(numCompteCourant: number): Observable<CompteCourant> {
