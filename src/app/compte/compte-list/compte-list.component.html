@@ -18,7 +18,6 @@
   <caption>Compte Courant</caption>
   <thead>
     <tr>
-      <!-- <th>Type Compte</th> -->
       <th>Numero du compte</th>
       <th>Solde</th>
     </tr>
@@ -28,7 +27,7 @@
     <tr *ngFor="let client of clients">
       <td>{{client.compteCourant.numCompte}}</td>
       <td>{{client.compteCourant.solde}}</td>
-  
+
 
       <!-- <td>
           <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)" >
@@ -59,22 +58,21 @@
 
 
 <table class="table table-striped">
-    <caption>Compte Epargne</caption>
-    <thead>
-      <tr>
-        <!-- <th>Type Compte</th> -->
-        <th>Numero du compte</th>
-        <th>Solde</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <tr *ngFor="let client of clients">
-        <td>{{client.compteEpargne.numCompte}}</td>
-        <td>{{client.compteEpargne.solde}}</td>
-        
-  
-        <!-- <td>
+  <caption>Compte Epargne</caption>
+  <thead>
+    <tr>
+      <th>Numero du compte</th>
+      <th>Solde</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{client.compteEpargne.numCompte}}</td>
+      <td>{{client.compteEpargne.solde}}</td>
+
+
+      <!-- <td>
             <a [routerLink]="['/editClient', client.id]" class="btn btn-default btn-sm" (click)="loadCompteCourants(client.id)" >
               <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
             </a>
@@ -85,20 +83,20 @@
               <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Supprimer
             </button>
           </td> -->
-  
-        <td>
-          <a [routerLink]="['']" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Simulation de credit
-          </a>
-          <a [routerLink]="['']" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Virement
-          </a>
-          <a [routerLink]="['']" class="btn btn-default btn-sm">
-            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Audit
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+      <td>
+        <a [routerLink]="['']" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Simulation de credit
+        </a>
+        <a [routerLink]="['']" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Virement
+        </a>
+        <a [routerLink]="['']" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Audit
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- </div> -->

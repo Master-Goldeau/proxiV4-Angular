@@ -14,9 +14,9 @@ export class CompteService {
   ) { }
 
 
-  loadComptes(): Observable<Client[]> {
-    return this.http.get<Client[]>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients');
-  }
+  // loadComptes(): Observable<Client[]> {
+  //   return this.http.get<Client[]>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients');
+  // }
 
   loadCompte(clientId: number): Observable<Client> {
     return this.http.get<Client>('http://localhost:8080/ProxibanqueV4-Arnaud-Ozlem-Morane-Etienne/clients/' + clientId);

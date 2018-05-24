@@ -78,9 +78,9 @@ export class CompteListComponent implements OnInit {
   //   alert('Compte Epargne' + compteEpargne + 'enregistré');
   // }
 
-  deleteCompteEpargne(compteEpargne: CompteEpargne) {
-    this.compteService.deleteCompteEpargne(this.client).subscribe();
-    this.ngOnInit();
-    alert('Compte Epargne n°' + compteEpargne + ' effacé');
-  }
+//   deleteCompteEpargne(compteEpargne: CompteEpargne) {
+//     this.compteService.deleteCompteEpargne(this.client).subscribe();
+//     this.ngOnInit();
+//     alert('Compte Epargne n°' + compteEpargne + ' effacé');
+//   }
 }
