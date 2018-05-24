@@ -7,17 +7,17 @@
 //     client?: Client
 // }
 
-export class Compte {
-    id: number;
+export abstract class Compte {
+    numCompte: number;
     solde: number;
     dateOuverture: string;
    
 
-    // constructor(compte: CompteOptions) {
-    //     this.id = compte.id;
-    //     this.solde= compte.solde;
-    //     this.dateOuverture = compte.dateOuverture;
+    constructor(compte: Compte) {
+        this.numCompte = compte.numCompte;
+        this.solde= compte.solde;
+        this.dateOuverture = compte.dateOuverture;
         
-    // }
+    }
 
 }

@@ -1,6 +1,9 @@
 <form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient()" >
 
-
+        <app-field label="Nom*" [control]="clientForm.get('nom')">
+                <input formControlName="nom" type="text" class="form-control" placeholder="Nom" >
+            </app-field>
+          
 
   <app-field label="Prenom*" [control]="clientForm.get('prenom')">
       <input formControlName="prenom" type="text" class="form-control" placeholder="Prenom">
@@ -8,19 +11,24 @@
       <!-- <input [attr.disabled]="option=='voir' ? '' : null" formControlName="prenom" type="text" class="form-control" placeholder="Prenom"> -->
   </app-field>
 
-  <app-field label="Nom*" [control]="clientForm.get('nom')">
-      <input formControlName="nom" type="text" class="form-control" placeholder="Nom" >
-  </app-field>
 
-
-
-  <app-field label="Adresse*" [control]="clientForm.get('adresse')">
-      <input formControlName="adresse" type="text" class="form-control" placeholder="Adresse" >
-  </app-field>
-
+ 
   <app-field label="Telephone*" [control]="clientForm.get('telephone')">
-      <input formControlName="telephone" type="text" class="form-control" placeholder="Telephone" >
-  </app-field>
+        <input formControlName="telephone" type="text" class="form-control" placeholder="Telephone" >
+    </app-field>
+
+
+<app-field label="Adresse" [control]="clientForm.get('adresse')">
+    <input formControlName="adresse" type="text" class="form-control" placeholder="Adresse" >
+</app-field>
+
+<app-field label="Ville" [control]="clientForm.get('ville')">
+        <input formControlName="ville" type="text" class="form-control" placeholder="Ville" >
+    </app-field>
+
+<app-field label="CodePostal" [control]="clientForm.get('codePostal')">
+    <input formControlName="codePostal" type="text" class="form-control" placeholder="CodePostal" >
+</app-field>
 
   
 <a routerLink="/clients">Retour</a>

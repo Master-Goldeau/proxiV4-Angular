@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ConseillerListComponent } from './conseiller-list/conseiller-list.component';
 import { ConseillerService } from './conseiller.service';
-import { GerantModule } from '../gerant/gerant.module';
+// import { GerantModule } from '../gerant/gerant.module';
 import { FieldComponent } from './field/field.component';
 import { AuthService } from './services/auth.service';
 import { ConseillerLoginComponent } from './conseiller-login/conseiller-login.component';

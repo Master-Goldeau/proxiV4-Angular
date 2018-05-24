@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
+// import { ConseillerLoginComponent } from './conseiller/conseiller-login/conseiller-login.component';
 // import { GerantLoginComponent } from './gerant/gerant-login/gerant-login.component';
 import { ConseillerModule } from './conseiller/conseiller.module';
 import { GerantModule } from './gerant/gerant.module';

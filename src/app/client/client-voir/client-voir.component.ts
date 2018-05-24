@@ -26,8 +26,10 @@ export class ClientVoirComponent implements OnInit {
     this.clientForm = this.fb.group({
       prenom: ['', [Validators.required, Validators.minLength(2)]],
       nom: ['', [Validators.required, Validators.minLength(2)]],
-      adresse: ['', [Validators.required, Validators.minLength(1)]],
       telephone: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
+      adresse: [''],
+      ville: [''],
+      codePostal: [''],
 
     });
 

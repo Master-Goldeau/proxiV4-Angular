@@ -1,4 +1,5 @@
 import { Gerant } from "../gerant/gerant";
+// import { Person } from "../person";
 
 
 // export interface Conseiller {
@@ -15,16 +16,16 @@ interface ConseillerOptions {
   gerant?: Gerant
 }
 
-export class Conseiller {
+export class Conseiller { //implements Person
   id: number;
   prenom: string;
   nom: string;
   login: string;
   password: string;
-  gerant: Gerant
+  gerant: Gerant;
 
 
-  constructor(conseiller: ConseillerOptions) {
+  constructor(conseiller: ConseillerOptions={}) {
       this.id = conseiller.id;
       this.prenom = conseiller.prenom;
       this.nom = conseiller.nom;

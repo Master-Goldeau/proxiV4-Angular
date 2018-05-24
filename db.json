@@ -25,45 +25,49 @@
   ],
   "clients": [
     {
-      "id": 1,
-      "prenom": "Jean-Michel",
-      "nom": "Hiltbrunner",
-      "adresse": "5 rue four",
-      "telephone": "1234567890"
-    },
-    {
       "id": 2,
-      "prenom": "Anthony",
-      "nom": "Le Cigne",
-      "adresse": "6 pave marre",
-      "telephone": "1234567890",
-      "conseiller": "bob"
+      "nom": "Davaro",
+      "prenom": "Memo",
+      "telephone": "0201202202",
+      "adresse": "impasse du Four",
+      "ville": "Cherbourg",
+      "codePostal": "010210"
     },
     {
       "id": 3,
-      "prenom": "Morane",
-      "nom": "Musa",
-      "adresse": "7 rue temple",
-      "telephone": "1234567890",
-      "conseiller": "laura"
+      "nom": "momo",
+      "prenom": "saban",
+      "telephone": "0201202202",
+      "adresse": "impasse du Four",
+      "ville": "paris",
+      "codePostal": "75001"
     },
     {
-      "id": 4,
-      "prenom": "Sandrine",
-      "nom": "Le Mentec",
-      "adresse": "8 avenue foch",
-      "telephone": "1234567890",
-      "conseiller": "laura"
+      "id": 1,
+      "nom": "omguk",
+      "prenom": "omer",
+      "telephone": "0201202202",
+      "adresse": "impasse du Four",
+      "ville": "ris",
+      "codePostal": "91130"
     }
   ],
-  "comptes": [
+  "compteCourant": [
     {
-      "id": 10,
-      "solde": 1000
-    },
+      "numCompte": 2,
+      "solde": 1,
+      "dateOuverture": "13/01/2016",
+      "typeCompte": "particulier",
+      "carteVisa": "visa"
+    }
+  ],
+  "compteEpargne": [
     {
-      "id": 11,
-      "solde": 100
+      "numCompte": 9,
+      "solde": 1,
+      "dateOuverture": "13/01/2016",
+      "typeCompte": "particulier",
+      "tauxRenumeration": 0
     }
   ]
 }

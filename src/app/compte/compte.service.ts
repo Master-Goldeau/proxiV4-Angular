@@ -1,29 +1,53 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import {Compte} from './compte';
+import { CompteCourant } from './compte courant/compte courant';
+import { CompteEpargne } from './compte epargne/compte epargne';
+import { Client } from '../client/client';
+
 
 @Injectable()
 export class CompteService {
 
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
 
-  loadComptes(): Observable<Compte[]> {
-    return this.http.get<Compte[]>('http://localhost:3004/comptes');
+  loadCompteCourants(client: Client): Observable<CompteCourant[]> {
+    return this.http.get<CompteCourant[]>('http://localhost:3004/clients' + client.id);
   }
 
-  loadCompte(compteId: number): Observable<Compte> {
-    return this.http.get<Compte>('http://localhost:3004/comptes/' + compteId);
-}
-
-saveCompte(compte: Compte): Observable<Compte> {
-  if (compte.id) { // UPDATE
-    return this.http.put<Compte>('http://localhost:3004/comptes/' + compte.id,compte);
-  } else { // INSERT
-    return this.http.post<Compte>('http://localhost:3004/comptes', compte);
+  loadCompteEpargnes(client: Client): Observable<CompteEpargne[]> {
+    return this.http.get<CompteEpargne[]>('http://localhost:3004/clients' + client.id);
   }
-}
 
+
+  // loadCompteCourant(numCompteCourant: number): Observable<CompteCourant> {
+  //   return this.http.get<CompteCourant>('http://localhost:3004/clients/' + client.id, client.numCompteCourant );
+  // }
+
+  // loadCompteEpargne(numCompteEpargne: number): Observable<CompteEpargne> {
+  //   return this.http.get<CompteEpargne>('http://localhost:3004/clients/' + numCompteEpargne);
+  // }
+
+  // saveCompteCourant(compteCourant: CompteCourant): Observable<CompteCourant> {
+  //   if (compteCourant.numCompte) { // UPDATE
+  //     return this.http.put<CompteCourant>('http://localhost:3004/comptes/' + compteCourant.numCompte, compteCourant);
+  //   } else { // INSERT
+  //     return this.http.post<CompteCourant>('http://localhost:3004/comptes', compteCourant);
+  //   }
+  // }
+
+  // saveCompteEpargne(client: Client): Observable<Client> {
+  //   if (client.id) { // UPDATE
+  //     return this.http.put<CompteEpargne>('http://localhost:3004/clients/);
+  //   } else { // INSERT
+  //     return this.http.post<CompteEpargne>('http://localhost:3004/clients/' +client.id, compteEpargnes);
+  //   }
+  // }
+
+ 
+  deleteCompteEpargne(client: Client): Observable<any> {
+    return this.http.delete('http://localhost:3004/clients/' + client);
+  }
 }

@@ -1,19 +1,17 @@
-import { Compte } from "../compte";
 import { Client } from "../../client/client";
+import { Compte } from "../compte";
 
 
-export class CompteEpargne implements Compte {
-    client: Client;
-    id: number;
-    solde: number;
-    dateOuverture: string;
+export class CompteEpargne extends Compte {
+    // client: Client;
+    // numCompteEpargne: number;
+    // soldeEpargne: number;
+    // dateOuverture: string;
+    tauxRenumeration:number;
     
-    constructor(client: Client, idCompteEpargne:number,soldeCompteEpargne:number, dateOuvertureCompteEpargne:string) {
-        this.client=client;
-        this.id=idCompteEpargne;
-        this.solde = soldeCompteEpargne;
-        this.dateOuverture = dateOuvertureCompteEpargne;
-        
+    constructor(compteEpargne:CompteEpargne) {
+        super(compteEpargne);
+        this.tauxRenumeration=compteEpargne.tauxRenumeration;
     } 
 
 }

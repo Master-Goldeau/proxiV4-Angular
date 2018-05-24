@@ -1,18 +1,17 @@
-import { Compte } from "../compte";
-import { Client } from "../../client/client";
 
-export class CompteCourant implements Compte {
-    client: Client;
-    id: number;
-    solde: number;
-    dateOuverture: string;
+import { Client } from "../../client/client";
+import { Compte } from "../compte";
+
+export class CompteCourant extends Compte {
+    // client: Client;
+    // numCompteCourant: number;
+    // soldeCourant: number;
+    // dateOuvertureCourant: string;
+    carteVisa:string;
     
-    constructor(client: Client, idCompteCourant:number,soldeCompteCourant:number, dateOuvertureCompteCourant:string) {
-        this.client=client;
-        this.id=idCompteCourant;
-        this.solde = soldeCompteCourant;
-        this.dateOuverture = dateOuvertureCompteCourant;
-        
-    }
+    constructor(compteCourant:CompteCourant) {
+        super(compteCourant);
+        this.carteVisa=compteCourant.carteVisa;
+    } 
 
 }
