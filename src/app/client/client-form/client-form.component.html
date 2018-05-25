@@ -1,6 +1,6 @@
 <form novalidate [formGroup]="clientForm" (ngSubmit)="saveClient()">
     <form novalidate [formGroup]="clientForm">
-        <h4>Informations modifiables du client: </h4>
+        <h4>Informations du client: </h4>
 
         <app-field label="Nom*" [control]="clientForm.get('nom')">
             <input formControlName="nom" type="text" class="form-control" placeholder="Nom">
