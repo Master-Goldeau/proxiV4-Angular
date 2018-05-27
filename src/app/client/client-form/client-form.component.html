@@ -88,7 +88,7 @@
         </div>
 
 <div>
-    <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid && !clientForm.dirty">Enregistrer</button>
+    <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid && clientForm.dirty">Enregistrer</button>
     <button class="btn btn-primary" routerLink="/clients">Annuler</button>
      </div>
 </form>
